@@ -1,0 +1,26 @@
+commit 56c42520e53fbe5db31a06ab5b745e5ced9f3b70
+Author: nkraetzschmar <9020053+nkraetzschmar@users.noreply.github.com>
+Date:   Mon Mar 2 12:35:12 2026 +0100
+
+    fix: set FIRST_SYSTEM_UID=101 and FIRST_SYSTEM_GID=101
+    
+    This is needed to align adduser behaviour with that of shadow utils
+
+diff --git a/adduser.conf b/adduser.conf
+index ff82f9e..e8e3f16 100644
+--- a/adduser.conf
++++ b/adduser.conf
+@@ -32,11 +32,11 @@
+ # for system users, system groups, non-system users and non-system groups
+ # can be dynamically allocated.
+ # Default: FIRST_SYSTEM_UID=100, LAST_SYSTEM_UID=999
+-#FIRST_SYSTEM_UID=100
++FIRST_SYSTEM_UID=101
+ #LAST_SYSTEM_UID=999
+ 
+ # Default: FIRST_SYSTEM_GID=100, LAST_SYSTEM_GID=999
+-#FIRST_SYSTEM_GID=100
++FIRST_SYSTEM_GID=101
+ #LAST_SYSTEM_GID=999
+ 
+ # Default: FIRST_UID=1000, LAST_UID=59999
